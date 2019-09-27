@@ -4,27 +4,22 @@
 {% block body %}
 <!--=====================Upload A File=======================-->
 <body id="body1">
-	<div id="upload_container" class="container" onload="change_bkg">
-		<div id="upload_row" class="row">
-			<marquee>Upload your .csv file and wait for a minute.</marquee>
-			<div class="col">                
-				<form id="form_border" action="{% url 'index' %}" method="post" enctype="multipart/form-data">
-					{% csrf_token %}
-					<!---->
-					<p>{{ form.non_field_errors }}</p>
+	<div class="container" onload="change_bkg">
+		<form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<!---->
+			<p>{{ form.non_field_errors }}</p>
 
-					<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
-		
-					<p class='primary'>
-						{{ form.docfile.errors }}
-						{{ form.docfile }}
-					</p>                        
+			<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
 
-					<br/>                      
-					<input style="width:50%; padding:0px margin: 0px;" type="submit" class="col btn btn-primary mx-auto" value="Upload"/>                            
-				</form>                                                                                                                                                                                       
-			</div>        
-		</div>           
+			<p class='primary'>
+				{{ form.docfile.errors }}
+				{{ form.docfile }}
+			</p>                        
+
+			<br/>                      
+			<input style="width:50%; padding:0px margin: 0px;" type="submit" class="col btn btn-primary mx-auto" value="Upload"/>                            
+		</form>       
 	</div>
 </body>
 {% endblock body %}

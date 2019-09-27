@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 10vh;
+    padding: 20px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-auto-rows: 100%; */
+    grid-gap: 10px;
+}
+
+section > div {
+    background: lightgray;
+    width: 100%;
+    height: 90vh;
+}
+
+.formUpload > div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+
+}
+
+.btn, .file {
+    background: rgb(247, 247, 247);
+    margin: 10px;
+    padding: 15px;
+    font-weight: 600;
+    border: none;
+}
+
+.listFiles {
+    padding: 10px;
+
+}
+
+.listFiles > div {
+    background: whitesmoke;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+@media (max-width: 500px) {
+
+}

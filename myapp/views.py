@@ -61,7 +61,7 @@ def index(request):
     documents = New_Document.objects.all()      
 
     # Render list page with the documents and the form
-    return render(request, 'index.html', {'documents': documents, 'name':"Download File", 'form': form})
+    return render(request, 'file_processing_index.html', {'documents': documents, 'name':"Download File", 'form': form})
 
 def upload(request):
     return render(request, 'upload.html', {})
