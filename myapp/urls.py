@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import index, upload, download
+from .views import index, login
 
 urlpatterns = [
 	path('', index, name='index'),
-	path('upload/', upload, name='upload'),
-	path('download/', download, name='download'),
+	path('login/', login, name='login'),	
 ]
