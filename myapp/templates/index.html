@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Minimal Django File Upload Example</title>
+        
+        {% load static %}
+        {% load crispy_forms_tags %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->   
+        <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">	
+        <link rel="stylesheet" type="text/css" href="{% static 'css/file_processor_styling.css' %}">	            
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'dist/css/flat-ui.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <!--===============================================================================================-->
+        
+    </head> 
+        
+        {% block body%}
+            <iframe name="upload_f" id='upload_frame' src="{% url 'upload' %}" width='45%' height='90%' style=" margin: 20px;"></iframe>
+            <iframe name="download_f" id='downloads_frame' src="{% url 'download' %}" width='45%' height='90%' style=" margin: 20px;"></iframe>
+        {% endblock body%}
+
+<!--==================JavaScript goes here=======================-->
+    <script src="{% static 'js/file_processor_styling.js' %}"></script>
+
+	<!--===============================================================================================-->
+	<!--<script src="{% static 'jquery/jquery-3.4.1/dist/jquery.min.js' %}" ></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" ></script>
+	<script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'popper/popper.min.js' %}" ></script>
+    <script src="{% static 'dist/scripts/flat-ui.js' %}" ></script> -->
+    
+</html>
