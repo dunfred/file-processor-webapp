@@ -58,7 +58,13 @@ def index(request):
             #previous_document.delete()
         
     # Load documents for the list page
-    documents = New_Document.objects.all()      
+    query_set = New_Document.objects.all()
+    documents = []
+    cnt = len(query_set) - 1
+    for i in query_set:
+        documents.append(query_set[cnt])
+        cnt -= 1
+    documents = documents
 
     # Render list page with the documents and the form
     return render(request, 'file_processing_index.html', {'documents': documents, 'name':"Download File", 'form': form})
