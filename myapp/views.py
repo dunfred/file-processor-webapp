@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.files import File
 from django.core.files.base import ContentFile
+from django.contrib.auth.forms import AuthenticationForm
 
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
@@ -66,9 +67,18 @@ def index(request):
         cnt -= 1
     documents = documents
 
-    # Render list page with the documents and the form
+    # Render file_processing_indexpython manage.py runserver
+    #  page with the documents and the form
     return render(request, 'file_processing_index.html', {'documents': documents, 'name':"Download File", 'form': form})
 
 def login(request):
-    return render(request, 'login.html', {})
+    if request.method == 'POST':
+        form = AuthenticationForm(data = request.POST)
+        #if form.is_valid():
+            #return redirect("index")
+
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'login.html', {'form':form})
 

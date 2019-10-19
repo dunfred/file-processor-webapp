@@ -7,23 +7,29 @@
     <title>Login Form</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}">    
   </head>
+
   <body>  
-    <form action="file_processing_index.html" class="login-form">
+    <form action="{% url 'index' %}" class="login-form">
       {% csrf_token %}
       <h1>Login</h1>
+
       <div class="txtb">
-        <input type="text">
+        {{ form.username }}
         <span data-placeholder="Username"></span>
       </div>
+
       <div class="txtb">
-        <input type="password">
-        <s pan data-placeholder="Password"></s>
+        {{ form.password }}
+        <span data-placeholder="Password"></span>
       </div>
+
       <input type="submit" class="logbtn" value="Login">
+
       <div class="bottom-text">
-        Don't have account? <a href="#">Sign up</a>
-      </div>
+        Don't have account? <a href="#">Sign up</a>                
+      </div>        
     </form>
+
     <script  src="{% static 'js/login.js' %}"></script>
     <script src="{% static 'jquery/jquery-3.4.1/dist/jquery.min.js' %}"></script>
   </body>
