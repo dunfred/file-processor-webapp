@@ -5,13 +5,29 @@ from django.contrib.auth.forms import AuthenticationForm
 
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import documentSerializers
 
 from myapp.models import Document, New_Document
 from myapp.forms import DocumentForm
 
 from .File_Filter_App.code import Airtel_AV_Dashboard
 from os.path import basename
+
+class documentsList(APIView):
+    def get(self, request):
+        docs = Document.objects.all()
+        serializer = documentSerializers(docs, many=True)
+        return Response(serializer.data)
+        
+    def post(self):
+        pass
+
 
 def index(request):
     # Handle file upload
@@ -81,4 +97,8 @@ def login(request):
         form = AuthenticationForm()
 
     return render(request, 'login.html', {'form':form})
+
+
+
+
 
