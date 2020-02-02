@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  {% load static %}    
+  <head>  
+    <meta charset="utf-8">
+    <title>Start Script</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">    
+  </head>
+
+  <body>  
+    <form method="POST" action="{% url 'scrape' %}" class="login-form">
+      {% csrf_token %}
+      <input type="submit" class="logbtn" value="Start Scrapping">       
+    </form>
+
+    </body>
+</html>

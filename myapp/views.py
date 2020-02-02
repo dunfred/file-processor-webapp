@@ -17,6 +17,7 @@ from myapp.models import Document, New_Document
 from myapp.forms import DocumentForm
 
 from .File_Filter_App.code import Airtel_AV_Dashboard
+from .File_Filter_App.check_status import CheckStatus
 from os.path import basename
 
 class documentsList(APIView):
@@ -98,7 +99,13 @@ def login(request):
 
     return render(request, 'login.html', {'form':form})
 
+def scraper(request):
+    if request.method == 'POST':
+        start = CheckStatus()
+        start.start()
+        
 
+    return render(request, 'scrape.html', {})
 
 
 
