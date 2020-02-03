@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse, HttpResponseRedirect
 from django.core.files import File
 from django.core.files.base import ContentFile
 from django.contrib.auth.forms import AuthenticationForm
@@ -104,7 +104,6 @@ def scraper(request):
         start = CheckStatus()
         start.start()
         
-
     return render(request, 'scrape.html', {})
 
 

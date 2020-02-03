@@ -5,3 +5,4 @@ class DocumentForm(forms.Form):
         label='Select a file',
         help_text='Max: 42 megabytes'
     )
+
