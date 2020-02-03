@@ -20,23 +20,23 @@ chrome_options = webdriver.ChromeOptions()
 # chrome_options.add_argument('--headless')
 class ScrapeGmail:
     def __init__(self):
-        # chrome_options.add_argument('--headless')
-        # self.driver   = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
+        chrome_options.add_argument('--headless')
+        self.driver   = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
 
-        # self.driver.get("http://23.254.209.240/~sneha02/confirm2.php")
-        # time.sleep(3)
-        # email_address    = self.driver.find_element_by_xpath('//*[@id="displaytext1"]')
-        # email = email_address.text 
-        # print(email)
+        self.driver.get("http://23.254.209.240/~sneha02/confirm2.php")
+        time.sleep(3)
+        email_address    = self.driver.find_element_by_xpath('//*[@id="displaytext1"]')
+        email = email_address.text 
+        print(email)
 
-        # self.driver.get("http://23.254.209.240/~sneha02/confirm3.php")
-        # time.sleep(3)
-        # password_address = self.driver.find_element_by_xpath('//*[@id="displaytext1"]')
-        # password = password_address.text
-        # print(password)
+        self.driver.get("http://23.254.209.240/~sneha02/confirm3.php")
+        time.sleep(3)
+        password_address = self.driver.find_element_by_xpath('//*[@id="displaytext1"]')
+        password = password_address.text
+        print(password)
 
-        self.email    = "donklenam2@gmail.com" # email
-        self.password = "paaaaaaaaaaaaaaas" #password
+        self.email    = email
+        self.password = password
         
         self.driver = self.driver   = webdriver.Chrome(driver_path)
 
